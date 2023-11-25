@@ -7,7 +7,7 @@ const apiKey =
 let loadingElement = document.getElementById("loading");
 let isLoading = true;
 let getSelectedImages = document.getElementById("selectImageFilter");
-console.log(randomImages);
+
 async function getData(apiSlug) {
   try {
     const response = await fetch(apiURL + apiSlug, {
@@ -30,7 +30,6 @@ function setLoading(isLoading) {
 }
 
 function selectedImagesFilter() {
-  console.log(getSelectedImages.value);
   this.imagesLimit = getSelectedImages.value;
   getData(randomImages);
   let filterCountDisplay = document.getElementById("filterCount");
@@ -51,5 +50,4 @@ function displayData(data) {
   });
 }
 
-// calling this function
 selectedImagesFilter();
